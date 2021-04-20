@@ -10,6 +10,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
         
+      - name: Install Dependencies
+        run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev
+        
       - name: Run clang-tidy
         uses: HorstBaerbel/action-clang-tidy@1.1
 
