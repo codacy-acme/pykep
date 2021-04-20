@@ -12,6 +12,10 @@ jobs:
         
       - name: Install Dependencies
         run: sudo apt-get update && sudo apt-get install -yq libboost-all-dev
+      - name: Boost location
+        run: ldconfig -p | grep libboost
+      - name: Boost location
+        run: echo $BOOST_ROOT
         
       - name: Run clang-tidy
         uses: HorstBaerbel/action-clang-tidy@1.1
